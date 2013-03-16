@@ -1,0 +1,40 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	String.ic
+//
+//	This file contains all the functions used internally
+//	by the compiler to deal with the string data type.
+// -----------------------------------------o--------------
+
+// ----------------------------------------------------
+// Internal class. Don't fiddle with this!
+// ----------------------------------------------------
+class string 
+{
+	public:		var int Length;			
+	private:	var int __ptrToData;  	
+}
+
+extern
+{
+	function string _String_CreateFromLiteral(int ptrToMemory);
+	
+	function string _String_Concat(string ptrToStringTwo, string ptrToStringOne);
+	
+	function int _String_StringToCString(string val);
+	function string _String_CStringToString(int val);
+						
+	function bool _String_CEQ(string rvalue, string lvalue);
+	function bool _String_CNE(string rvalue, string lvalue);
+			
+	function int _String_StringToInt(string lvalue);
+	function bool _String_StringToBool(string lvalue); 
+	function long _String_StringToLong(string lvalue); 
+	function float _String_StringToFloat(string lvalue); 
+	function double _String_StringToDouble(string lvalue);  	
+}

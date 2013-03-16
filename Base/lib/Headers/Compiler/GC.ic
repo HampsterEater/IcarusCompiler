@@ -1,0 +1,32 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	GC.ic
+//
+//	This file contains all the functions used internally
+//	by the compiler to deal with garbage collection.
+// -----------------------------------------o--------------
+
+extern
+{
+	function int _AllocateObject(int classTableIndex); 
+	function int _AllocateObjectByClass(int classDefinition); 
+	function void _DeallocateObject(int ptrToObject);
+	
+	function void _RegisterClass(int ptrToClassDefinition);
+	function void _RegisterGlobal(int ptrToClassDefinition);
+	function void _RegisterMetaData(int ptrToClassDefinition);
+	//function void _UnregisterClass(int classTableIndex);
+	
+	function int _ExplicitCast(int classDefinitionIndex, int ptrToObject);
+	
+	function void _IncrementRefCount(int ptrToObject);
+	function void _DecrementRefCount(int ptrToObject);
+	function void _BeginGC();
+	function void _FinishGC();
+	function void _ExecuteGC();
+}

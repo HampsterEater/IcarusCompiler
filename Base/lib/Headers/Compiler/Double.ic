@@ -1,0 +1,20 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	Double.ic
+//
+//	This file contains all the functions used internally
+//	by the compiler to deal with the double data type.
+// -----------------------------------------o--------------
+
+extern
+{
+	function int _Double_DoubleToInt(double lvalue); 
+	function long _Double_DoubleToLong(double lvalue); 
+	function string _Double_DoubleToString(double lvalue); 
+	function float _Double_DoubleToFloat(double lvalue); 
+}

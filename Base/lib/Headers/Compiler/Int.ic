@@ -1,0 +1,19 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	Int.ic
+//
+//	This file contains all the functions used internally
+//	by the compiler to deal with the int data type.
+// -----------------------------------------o--------------
+
+extern
+{
+	function string _Int_IntToString(int lvalue); 
+	function float _Int_IntToFloat(int lvalue); 
+	function double _Int_IntToDouble(int lvalue); 
+}

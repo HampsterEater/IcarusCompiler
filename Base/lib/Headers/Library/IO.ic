@@ -1,0 +1,19 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	IO.ic
+//
+//	This file contains all the standard library functions
+//	for input/output.
+// -----------------------------------------o--------------
+
+extern
+{
+	function Print(string val);
+	function PrintInt(int val);
+	function PrintNS(int val);
+}

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2D4F3FA3-17F1-4226-B8BD-7EA6D6D8972F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Icarus</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Base\bin\</OutDir>
+    <TargetName>ICC</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Base\bin\</OutDir>
+    <TargetName>ICC</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ArrayDataType.h" />
+    <ClInclude Include="BoolDataType.h" />
+    <ClInclude Include="ByteDataType.h" />
+    <ClInclude Include="ClassDataType.h" />
+    <ClInclude Include="ClassSymbol.h" />
+    <ClInclude Include="CodeGenerator.h" />
+    <ClInclude Include="DataType.h" />
+    <ClInclude Include="DoubleDataType.h" />
+    <ClInclude Include="FileHelper.h" />
+    <ClInclude Include="FloatDataType.h" />
+    <ClInclude Include="FunctionSymbol.h" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="Icarus.h" />
+    <ClInclude Include="IcarusCompilerApp.h" />
+    <ClInclude Include="Instruction.h" />
+    <ClInclude Include="IntDataType.h" />
+    <ClInclude Include="LexicalAnalyser.h" />
+    <ClInclude Include="LongDataType.h" />
+    <ClInclude Include="NamespaceSymbol.h" />
+    <ClInclude Include="Operand.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="PreProcessor.h" />
+    <ClInclude Include="QWordDataType.h" />
+    <ClInclude Include="ShortDataType.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StringDataType.h" />
+    <ClInclude Include="StringHelper.h" />
+    <ClInclude Include="StringSymbol.h" />
+    <ClInclude Include="Symbol.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="VariableSymbol.h" />
+    <ClInclude Include="VoidDataType.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ArrayDataType.cpp" />
+    <ClCompile Include="BoolDataType.cpp" />
+    <ClCompile Include="ByteDataType.cpp" />
+    <ClCompile Include="ClassDataType.cpp" />
+    <ClCompile Include="ClassSymbol.cpp" />
+    <ClCompile Include="CodeGenerator.cpp" />
+    <ClCompile Include="DataType.cpp" />
+    <ClCompile Include="DoubleDataType.cpp" />
+    <ClCompile Include="FileHelper.cpp" />
+    <ClCompile Include="FloatDataType.cpp" />
+    <ClCompile Include="FunctionSymbol.cpp" />
+    <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="Icarus.cpp" />
+    <ClCompile Include="IcarusCompilerApp.cpp" />
+    <ClCompile Include="Instruction.cpp" />
+    <ClCompile Include="IntDataType.cpp" />
+    <ClCompile Include="LexicalAnalyser.cpp" />
+    <ClCompile Include="LongDataType.cpp" />
+    <ClCompile Include="NamespaceSymbol.cpp" />
+    <ClCompile Include="Operand.cpp" />
+    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="PreProcessor.cpp" />
+    <ClCompile Include="QWordDataType.cpp" />
+    <ClCompile Include="ShortDataType.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StringDataType.cpp" />
+    <ClCompile Include="StringHelper.cpp" />
+    <ClCompile Include="StringSymbol.cpp" />
+    <ClCompile Include="Symbol.cpp" />
+    <ClCompile Include="VariableSymbol.cpp" />
+    <ClCompile Include="VoidDataType.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Icarus.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

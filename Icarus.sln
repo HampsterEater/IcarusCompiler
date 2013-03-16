@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Icarus", "Icarus\Icarus.vcxproj", "{2D4F3FA3-17F1-4226-B8BD-7EA6D6D8972F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{002D97D4-39E6-4EE9-84C3-762FE7F55573} = {002D97D4-39E6-4EE9-84C3-762FE7F55573}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppStub", "AppStub\AppStub.vcxproj", "{002D97D4-39E6-4EE9-84C3-762FE7F55573}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D4F3FA3-17F1-4226-B8BD-7EA6D6D8972F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2D4F3FA3-17F1-4226-B8BD-7EA6D6D8972F}.Debug|Win32.Build.0 = Debug|Win32
+		{2D4F3FA3-17F1-4226-B8BD-7EA6D6D8972F}.Release|Win32.ActiveCfg = Release|Win32
+		{2D4F3FA3-17F1-4226-B8BD-7EA6D6D8972F}.Release|Win32.Build.0 = Release|Win32
+		{002D97D4-39E6-4EE9-84C3-762FE7F55573}.Debug|Win32.ActiveCfg = Debug|Win32
+		{002D97D4-39E6-4EE9-84C3-762FE7F55573}.Debug|Win32.Build.0 = Debug|Win32
+		{002D97D4-39E6-4EE9-84C3-762FE7F55573}.Release|Win32.ActiveCfg = Release|Win32
+		{002D97D4-39E6-4EE9-84C3-762FE7F55573}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

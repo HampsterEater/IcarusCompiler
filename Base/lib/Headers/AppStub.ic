@@ -1,0 +1,29 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	AppStub.ic
+//
+//	This file is automatically included into the top of 
+//  all compiled scripts so they can access the functions
+//  exported from the AppStub library.
+// -----------------------------------------o--------------
+
+// Compiler helper code.
+#include "Compiler\\Long.ic"
+#include "Compiler\\String.ic"
+#include "Compiler\\Bool.ic"
+#include "Compiler\\Float.ic"
+#include "Compiler\\Double.ic"
+#include "Compiler\\Int.ic"
+#include "Compiler\\GC.ic"
+#include "Compiler\\Exceptions.ic"
+#include "Compiler\\Class.ic"
+
+// Standard library code.
+#include "Library\\IO.ic"
+#include "Library\\Latency.ic"
+//#include "Library\\Reflection.ic"

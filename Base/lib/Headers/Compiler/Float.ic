@@ -1,0 +1,20 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	Float.ic
+//
+//	This file contains all the functions used internally
+//	by the compiler to deal with the float data type.
+// -----------------------------------------o--------------
+
+extern
+{
+	function int _Float_FloatToInt(float lvalue); 
+	function long _Float_FloatToLong(float lvalue); 
+	function string _Float_FloatToString(float lvalue); 
+	function double _Float_FloatToDouble(float lvalue); 
+}

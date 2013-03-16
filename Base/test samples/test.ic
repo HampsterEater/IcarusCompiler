@@ -1,0 +1,714 @@
+// -------------------------------------------------------
+//  Random Test of Icarus Compiler
+//  Written By Tim Leonard :3
+// -----------------------------------------o--------------
+
+/*
+Runtime.IO.GAY();
+
+namespace Runtime.IO
+{
+	function Gay()
+	{
+		Print("Sup");
+	}
+}
+
+namespace Runtime.IO
+{
+
+}
+*/
+
+/*
+function Enumerate()
+{
+	for (o in list)
+	{
+		yield o
+	}
+}
+
+while (e = Enumerate())
+{
+}
+*/
+
+namespace System::Console2
+{
+	class TestClass
+	{
+	
+	}
+}
+
+namespace System::Console::Awesome
+{
+	var int awesomeVar = 0;
+	
+	class AwesomeClass : System::Console2::TestClass
+	{
+	
+	}
+	
+	function AwesomeFunction()
+	{
+		Print("AwesomeFunction() was called!\n");
+	}
+}
+
+var System::Console::Awesome::AwesomeClass cls = new System::Console::Awesome::AwesomeClass();
+
+System::Console::Awesome::awesomeVar = 10;
+Print("awesomeVar:"+System::Console::Awesome::awesomeVar);
+System::Console::Awesome::AwesomeFunction();
+
+
+//var map[string, string]	 	testDict = [ "test":"string" ]
+//var list[float] 			testList = {};
+//generator
+
+/*
+class Collection
+{
+	var int counter = 40;
+	
+	method generator int iterator()
+	{
+		var v = 30; 
+		while (v < this.counter)
+		{
+//			yield v;
+			v += 1;
+		}
+		return 0;
+	}
+}	
+*/
+
+function generator int CountFrom(int from)
+{
+	var int end = from + 10;
+	while(from < end)
+	{
+//		yield from;
+		from += 1;
+	}
+	return 0; 
+}
+
+//var Collection list = null;
+
+var int iter1;
+foreach (iter1 in CountFrom(0))
+{
+	Print("COUNT A: "+iter1+"\n");
+}
+//foreach (System::Console::Awesome::awesomeVar in CountFrom(10))
+//{
+//	Print("COUNT B: "+System::Console::Awesome::awesomeVar+"\n");
+//}
+//foreach (var int iter2 in CountFrom(20))
+//{
+//	Print("COUNT C: "+iter2+"\n");
+//}
+//foreach (var int iter2 in list)
+//{
+//	Print("COUNT D: "+iter2+"\n");
+//}
+
+//foreach (anObj->fieldOne in CountFrom(30))
+//{
+	//Print("COUNT D: "+iter2+"\n");
+//}
+
+//foreach (var int iter2 in list)
+//{
+//	Print("COUNT C: "+iter2+"\n");
+//}
+//foreach (var int iter2 in list->b)
+//{
+//	Print("COUNT C: "+iter2+"\n");
+//}
+
+
+//TestClass::TestFunction("TEST");
+//TestClass::GetList();
+
+//var void(int, int) a = iovghjp;
+
+
+var int ooa = 1, oob = 2, ooc = 3;
+Print("ooa="+ooa+"\n");
+Print("oob="+oob+"\n");
+Print("ooc="+ooc+"\n");
+
+class TestClassBase 
+{
+	public:		
+		var int myVal = 1234;
+	
+		method Test()
+		{
+			Print("This Is The Base Method: "+myVal+"\n");
+		}
+		
+		method delete()
+		{
+			Print("Base Delete\n");
+		}
+		
+		method new()
+		{
+			Print("Base New\n");
+		}
+		
+	//	method index(int idx)
+	//	{
+	//		return @(data + idx);
+	//	}
+}
+
+class TestClass : TestClassBase
+{
+	public:
+		method Test()
+		{
+			Print("AAAAAAAAAAAAAA");
+			Print("AAAAAAAAAAAAAA");
+			Print("AAAAAAAAAAAAAA");
+			Print("AAAAAAAAAAAAAA");
+			Print("AAAAAAAAAAAAAA");
+			Print("This Is The Derived Method: "+myVal+"\n");
+			Super.Test();
+		}
+		
+		method int GetNum(int a, int b)
+		{
+			var int c = 100;
+			var int d = 20;
+			Print("A:"+a);
+			Print("B:"+b);
+			Print("C:"+c);
+			Print("D:"+d);
+			return (a+b)+(c+d);
+		}
+		
+		method delete()
+		{
+			Print("Super Delete\n");
+		}
+		
+		method new(int x, string y, int z)
+		{
+			Print("Super New: "+x+","+y+","+z+"\n");
+		}
+		method new()
+		{
+			Print("Super New: No Parameters\n");
+		}
+		
+
+	function TestFunction(string a)
+	{
+		Print("Test Function 1 called with "+a);
+	}
+	function TestFunction(string a, int b)
+	{
+		Print("Test Function 2 called with "+a+","+b);
+	}
+
+}
+
+function ATestFunction(TestClass cls)
+{
+}
+
+
+var TestClass a = new TestClass(1, "fsdsdf2", 3);		
+Print("Object is equal to:"+a+"\n");
+
+a.Test();
+a = null;
+
+
+try
+{
+	throw null;
+}
+catch (var Exception exc)
+{
+	print("A\n");
+}
+	
+Print("START OF TRY BLOCK\n");
+
+	try
+	{
+		try
+		{
+			Print("Start Main Block\n");
+			//throw new Exception();
+			a = NULL;
+			a.Test();
+			Print("End Main Block\n");
+		}
+		catch(var AccessViolationException dc)
+		{
+			Print("INNER\n");
+			a.Test();
+		}
+	}
+	catch (var AccessViolationException dc2)
+	{
+		Print("OUTER\n");
+	}
+
+	/*
+try
+{
+
+}
+catch(var AccessViolationException e)
+{
+	Print("   Address:"+e.Address+"\n");
+	Print("   ReadWriteFlag:"+e.ReadWriteFlag+"\n");
+	Print("   AccessAddress:"+e.AccessAddress+"\n");
+	Print("Catch-A\n");
+}
+catch
+{
+	Print("Catch-B\n");
+}
+finally
+{
+	Print("Finally Block\n");
+}
+else
+{
+	Print("No Exception Was Executed!\n");
+}
+Print("END OF TRY BLOCK\n");
+*/
+
+
+//else
+//{
+//	Print("Else Block");
+//}
+
+
+/*
+class Layer3 : Layer2
+{
+	public:
+		
+		method Talk()
+		{
+		}
+		
+		method Eat()
+		{
+		}
+}
+
+class Layer4 : Layer3
+{
+	public:
+
+}
+
+class Layer5 : Layer4
+{
+	public:
+		
+		method Talk()
+		{
+		}
+		
+		method Eat()
+		{
+		}
+}
+
+class Layer1
+{
+	public:
+		method Talk()
+		{
+		}
+}
+
+class Layer2 : Layer1
+{
+	public:
+}
+
+
+
+// ------------------------------------------------------------------
+// Inheritance / vftable test
+// ------------------------------------------------------------------
+class Cat : Animal
+{
+	public:
+		method Talk() { Print("meow: "+myVal+"\n"); }
+}
+class SuperDog : Dog
+{
+	public:
+		method Eat() { Print("om nom nom nom: "+myVal+"\n"); }
+}
+class Animal
+{
+	var int myVal;
+	public:
+		method Talk() { Print("I'm a base animal, wtf am I meant to say?: "+myVal+"\n"); }
+		method Eat() { Print("I can't eat :(: "+myVal+"\n"); }
+}
+class Dog : Animal
+{
+	var int DogVal;
+	public:
+		method Talk() { Print("woof: "+DogVal+"\n"); }
+}
+
+var Animal a = new Animal();   
+Print("\nThe Animal Says:\n");
+a.myVal = 0;
+a.Talk();
+a.Eat();
+
+a = new Dog();
+Print("\nThe Dog Says:\n");
+(<Dog>a).DogVal = 10;
+a.myVal = 1;
+a.Talk();
+a.Eat();
+
+a = new Cat();
+Print("\nThe Cat Says:\n");
+a.myVal = 2;
+a.Talk();
+a.Eat();
+
+a = new SuperDog();
+Print("\nThe SuperDog Says:\n");
+a.myVal = 3;
+a.Talk();
+a.Eat();;
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+// -----------------------------------------o--------------
+//	Start timing :3.
+// -----------------------------------------o--------------
+var float _startTime = PerfTime();
+
+// -----------------------------------------o--------------
+//	Testing variables.
+// -----------------------------------------o--------------
+var byte 	_byteTest 		= 1;
+var short 	_shortTest 		= 2;
+var int 	_intTest 		= 3;   
+var long 	_longTest 		= 100; 
+var float 	_floatTest 		= 5.5;
+var double 	_doubleTest 	= 6.6; 
+var string 	_stringTest 	= "7";
+
+// -----------------------------------------o--------------
+//	Implicit cast-to-string test.
+// -----------------------------------------o--------------
+Print("\n--- Implicit String Cast Test ---\n");
+Print("Byte   :"+_byteTest+"\n");
+Print("Short  :"+_shortTest+"\n");
+Print("Int    :"+_intTest+"\n");
+Print("Long   :"+_longTest+"\n");
+Print("Float  :"+_floatTest+"\n");
+Print("Double :"+_doubleTest+"\n");
+Print("String :'"+_stringTest+"'\n");
+
+// -----------------------------------------o--------------
+//	Implicit compound strings test.
+// -----------------------------------------o--------------
+Print("\n--- Compound String Cast Test ---\n");
+Print("Byte+String   :'"+(_byteTest+_stringTest)+"'\n");   	// Should be 17
+Print("Short+Double  :"+(_shortTest+_doubleTest)+"\n");  	// Should be 8.6
+Print("Int+Float     :"+(_intTest+_floatTest)+"\n");     	// Should be 8.5
+Print("Long+Double   :"+(_longTest+_doubleTest)+"\n");   	// Should be 10.6
+Print("Float+Long    :"+(_floatTest+_longTest)+"\n");    	// Should be 9.5
+Print("Double+Int    :"+(_doubleTest+_intTest)+"\n");    	// Should be 9.6
+Print("String+Byte   :'"+(_stringTest+_byteTest)+"'\n"); 	// Should be 71
+
+// -----------------------------------------o--------------
+//	If Test
+// -----------------------------------------o--------------
+Print("\n--- If Test ---\n");
+Print("(loop=10M)\n");
+var float startTestTime = PerfTime();
+
+for (var int i = 0; i < 10000000; i += 1)
+{
+	if (_doubleTest == 0)
+		;
+	else if (_doubleTest == 1)
+		;
+	else if (_doubleTest == 2)
+		;
+}
+
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	Switch Test.
+// -----------------------------------------o--------------
+Print("\n--- Switch Test ---\n");
+Print("(loop=10M)\n");
+startTestTime = PerfTime();
+
+for (i = 0; i < 10000000; i += 1)
+{
+	switch (_doubleTest)
+	{
+		case 0:
+		{
+		}
+		case 1:
+		{
+		}
+		case 2:
+		{
+		}
+	}	
+}
+
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	For Test.
+// -----------------------------------------o--------------
+Print("\n--- Nested For Loop Test ---\n");
+Print("(outer loop=1k iters, inner loop=10k iters, total=10M)\n");
+
+startTestTime = PerfTime();
+var long val = 0;
+for (var int x = 0; x < 1000; x += 1)
+	for (var int y = 0; y < 10000; y += 1) 
+		;//val += (y + x);
+		
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	While Test.
+// -----------------------------------------o--------------
+Print("\n--- Nested While Loop Test ---\n");
+Print("(outer loop=1k iters, inner loop=10k iters, total=10M)\n");
+
+startTestTime = PerfTime();
+x = 0;
+while (x < 1000)
+{
+	y = 0;
+	while (y < 10000)
+	{
+		val += (y + x);
+		y += 1;
+	}
+	x += 1;
+}
+		
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	Nested Function Test.
+// -----------------------------------------o--------------
+Print("\n--- Recursive Function Test ---\n");
+Print("(depth=100k nested calls)\n");
+function RecursiveFunctionTest(int x)
+{
+	if (x >= 100000)
+		return;
+		
+	//Print("Recursive:"+x+"\n");
+	RecursiveFunctionTest(x + 1);
+}
+
+startTestTime = PerfTime();
+RecursiveFunctionTest(1);		
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	Array Test.
+// -----------------------------------------o--------------
+
+// -----------------------------------------o--------------
+//	Allocation Test.
+// -----------------------------------------o--------------
+
+class Animal
+{
+	public:
+		var int BaseVar;
+		var AnimalSuper STest;
+		
+		method Talk()
+		{
+			Print("The Animal says BOOOOOOOOOOOOOOO\n");
+		}
+}
+
+class AnimalSuperSuper : AnimalSuper
+{
+	public:
+		var int SuperSuperVar;
+		
+		method Talk()
+		{
+			Print("The AnimalSuperSuper says BOOOOOOOOOOOOOOO\n");
+		}
+}
+
+class AnimalSuper : Animal
+{
+	public:
+		var int SuperVar;
+		
+		method Talk()
+		{
+			Print("The AnimalSuper says BOOOOOOOOOOOOOOO\n");
+		}
+}
+
+Print("\n--- Allocation Test ---\n");
+Print("(10M Iterations)\n");
+startTestTime = PerfTime();
+
+for (i = 0; i < 10000000; i += 1)
+	new Animal();
+	
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	Method Call Test.
+// -----------------------------------------o--------------
+
+Print("\n--- Method Call Test ---\n");
+Print("(10M Iterations)\n");
+startTestTime = PerfTime();
+
+var Animal test = new Animal();
+for (i = 0; i < 10000000; i += 1)
+	;//test.Talk();
+	
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	Virtual Method Call
+// -----------------------------------------o--------------
+
+Print("\n--- Virtual Method Call Test ---\n");
+Print("(10M Iterations)\n");
+
+test = new Animal();
+test.Talk();
+test = new AnimalSuper();
+test.Talk();
+
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	Member Access Test.
+// -----------------------------------------o--------------
+
+Print("\n--- Member Access Test ---\n");
+Print("(10M Iterations)\n");
+startTestTime = PerfTime();
+
+test = new Animal();
+for (i = 0; i < 10000000; i += 1)
+	test.BaseVar;
+	
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	Implicit cast Test.
+// -----------------------------------------o--------------
+
+Print("\n--- Implicit Cast Test ---\n");
+Print("(10M Iterations)\n");
+startTestTime = PerfTime();
+
+var AnimalSuper test2 = new AnimalSuper();
+for (i = 0; i < 10000000; i += 1)
+	test = test2;
+	
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	Explicit cast Test.
+// -----------------------------------------o--------------
+
+Print("\n--- Explicit Cast Test ---\n");
+Print("(10M Iterations)\n");
+startTestTime = PerfTime();
+
+for (i = 0; i < 10000000; i += 1)
+	test2 = <AnimalSuper>test;// Will return NULL, can't cast to base-type to super-type.
+	
+Print("Finished Test in "+(PerfTime()-startTestTime)+"ms\n");
+
+// -----------------------------------------o--------------
+//	Virtual methods.
+// -----------------------------------------o--------------
+
+// -----------------------------------------o--------------
+//	Virtual fields.
+// -----------------------------------------o--------------
+
+// -----------------------------------------o--------------
+//	Class Multiple Inheritance Test.
+// -----------------------------------------o--------------
+
+// -----------------------------------------o--------------
+//	Class Inheritance Test.
+// -----------------------------------------o--------------
+
+// -----------------------------------------o--------------
+//	Polymorphic Casting.
+// -----------------------------------------o--------------
+
+// -----------------------------------------o--------------
+//	Yielding Functions.
+// -----------------------------------------o--------------
+
+
+//base object type
+//class
+//return
+//if
+//continue
+//break
+//swtch
+//access-modifier
+//assignment
+//function call
+
+// -----------------------------------------o--------------
+//	All done.
+// -----------------------------------------o--------------
+var float _endTime = PerfTime();
+Print("\n--- Finished In "+(_endTime-_startTime)+"ms (Start:"+_startTime+" End:"+_endTime+") ---\n");
+*/

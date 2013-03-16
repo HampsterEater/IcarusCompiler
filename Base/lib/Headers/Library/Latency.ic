@@ -1,0 +1,18 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	Latency.ic
+//
+//	This file contains all the standard library functions
+//	for latency/time based code.
+// -----------------------------------------o--------------
+
+extern
+{
+	function Sleep(int duration);
+	function float PerfTime();
+}

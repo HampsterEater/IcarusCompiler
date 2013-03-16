@@ -1,0 +1,36 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	Class.ic
+//
+//	This file contains all the functions used internally
+//	by the compiler to deal with classes.
+// -----------------------------------------o--------------
+
+extern
+{
+	function string _Class_ToString(int ptrToObject);
+	
+	function int _Function_NewGeneratorContext(int ptrToFunctionDeclaration);
+	function int _Function_CallGenerator(int ptrToContext);
+	function int _Function_FreeGeneratorContext(int ptrToContext);
+}
+
+// ----------------------------------------------------
+// Internal class. Don't fiddle with this! The order
+// of members is assumed by the compiler!
+// ----------------------------------------------------
+class object
+{
+	private:
+	public:
+		method void Delete()		{}
+		method void New()			{}
+		method string ToString()	{ return "[AccessViolationException:0x00000000]"; }	
+	/*	method void Enumerate()		{ return 1;} */
+	//	generator int GetEnumerator() { return; } 
+}

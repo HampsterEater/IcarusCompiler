@@ -1,0 +1,150 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	Exceptions.ic
+//
+//	This file contains all the functions used internally
+//	by the compiler to deal with exception handling.
+// -----------------------------------------o--------------
+
+// External functions!
+extern
+{
+	function int _ExceptionStackEnter();
+	function void _ExceptionStackLeave();
+	function int _ExceptionThrow(object exState);
+	function int _ExceptionGetCPUState();
+	function int _ExceptionSetCPUState();
+}
+
+// ----------------------------------------------------
+// Exception constants.
+// ----------------------------------------------------
+const int READWRITEFLAG_READ = 0;
+const int READWRITEFLAG_WRITE = 1;
+const int READWRITEFLAG_DEP = 8;
+
+// ----------------------------------------------------
+// Internal classes. Don't fiddle with this!
+// ----------------------------------------------------
+class Exception : object
+{
+	public:
+		var int Address;
+}
+
+// Thrown when a unknown system exception occurs.
+class UnknownSystemException : Exception
+{
+}
+
+// The thread tried to read from or write to a virtual address for which it does not have the appropriate access.
+class AccessViolationException : Exception
+{
+	public:
+		var int ReadWriteFlag;
+		var int AccessAddress;
+}
+
+// The thread tried to access a page that was not present, and the system was unable to load the page. For example, this exception might occur if a network connection is lost while running a program over the network.
+class PageErrorException : Exception
+{
+	public:
+		var int ReadWriteFlag;
+		var int AccessAddress;
+		var int NTSTATUSCode;
+}
+
+// The thread tried to access an array element that is out of bounds and the underlying hardware supports bounds checking.
+class ArrayBoundsExceededException : Exception
+{
+}
+
+// The thread tried to read or write data that is misaligned on hardware that does not provide alignment. For example, 16-bit values must be aligned on 2-byte boundaries; 32-bit values on 4-byte boundaries, and so on.
+class DataTypeMisalignmentException : Exception
+{
+}
+
+// One of the operands in a floating-point operation is denormal. A denormal value is one that is too small to represent as a standard floating-point value.
+class FloatDenormalOperandException : Exception
+{
+}
+
+// The thread tried to divide a floating-point value by a floating-point divisor of zero.
+class FloatDivideByZeroException : Exception
+{
+}
+
+// The result of a floating-point operation cannot be represented exactly as a decimal fraction.
+class FloatInexactResultException : Exception
+{
+}
+
+// This exception represents any floating-point exception not included in this list.
+class FloatInvalidOperationException : Exception
+{
+}
+
+// The exponent of a floating-point operation is greater than the magnitude allowed by the corresponding type.
+class FloatOverflowException : Exception
+{
+}
+
+// The stack overflowed or underflowed as the result of a floating-point operation.
+class FloatStackCheckException : Exception
+{
+}
+
+// The exponent of a floating-point operation is less than the magnitude allowed by the corresponding type.
+class FloatUnderflowException : Exception
+{
+}
+
+// The thread tried to execute an invalid instruction.
+class IllegalInstructionException : Exception
+{
+}
+
+// The thread tried to divide an integer value by an integer divisor of zero.
+class DivideByZeroException : Exception
+{
+}
+
+// The result of an integer operation caused a carry out of the most significant bit of the result.
+class OverflowException : Exception
+{
+}
+
+// An exception handler returned an invalid disposition to the exception dispatcher. Programmers using a high-level language such as C should never encounter this exception.
+class InvalidDispositionException : Exception
+{
+}
+
+// The thread tried to continue execution after a noncontinuable exception occurred.
+class NonContinuableException : Exception
+{
+}
+
+// The thread tried to execute an instruction whose operation is not allowed in the current machine mode.
+class PrivInstructionException : Exception
+{
+}
+
+// The thread used up its stack.
+class StackOverflowException : Exception
+{
+}
+
+// A breakpoint was encountered.
+class BreakpointException : Exception
+{
+}
+
+// A trace trap or other single-instruction mechanism signaled that one instruction has been executed.
+class SingleStepException : Exception
+{
+}

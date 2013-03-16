@@ -1,0 +1,31 @@
+// -------------------------------------------------------
+//  AppStub Function Import Descriptor 
+//  Written By Timothy Leonard
+// -----------------------------------------o--------------
+//	WARNING: Can cause serious problems if modified, leave
+//			 this file well alone! Pretty plz :3
+// -----------------------------------------o--------------
+//	Long.ic
+//
+//	This file contains all the functions used internally
+//	by the compiler to deal with the long data type.
+// -----------------------------------------o--------------
+
+extern
+{
+	function long _LongDiv(long v2, long v1);
+	function long _LongMul(long v2, long v1);
+	function long _LongAdd(long v2, long v1);
+	function long _LongSub(long v2, long v1);
+	
+	function bool _LongCGT(long v2, long v1);
+	function bool _LongCLT(long v2, long v1);
+	function bool _LongCGE(long v2, long v1);
+	function bool _LongCLE(long v2, long v1);
+	function bool _LongCEQ(long v2, long v1);
+	function bool _LongCNE(long v2, long v1);
+			
+	function string _Long_LongToString(long lvalue); 
+	function float _Long_LongToFloat(long lvalue);
+	function double _Long_LongToDouble(long lvalue);
+}
